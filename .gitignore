@@ -38,3 +38,10 @@
 !/app/assets/builds/.keep
 
 /node_modules
+
+# Ignore key files for decrypting credentials and more.
+/config/credentials/*.key
+
+# Except
+!/config/credentials/development.key
+!/config/credentials/test.key
