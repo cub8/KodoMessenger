@@ -4,6 +4,7 @@
 
 source 'https://rubygems.org'
 
+gem 'bcrypt', '~> 3.1.21' # For safely handling
 gem 'bootsnap', '~> 1.23', require: false # Reduces boot times through caching; required in config/boot.rb
 gem 'cssbundling-rails', '~> 1.4.3' # Bundle and process CSS [https://github.com/rails/cssbundling-rails]
 gem 'haml-rails', '~> 3.0' # For writing html
@@ -21,7 +22,7 @@ gem 'stimulus-rails', '~> 1.3' # Hotwire's modest JavaScript framework [https://
 gem 'thruster', '~> 0.1', require: false # Add HTTP asset caching/compression and X-Sendfile acceleration to Puma [https://github.com/basecamp/thruster/]
 gem 'turbo-rails', '~> 2.0' # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem 'tzinfo-data', '~> 1.2025', platforms: %i[windows jruby] # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'view_component', '~> 4.4' # Turn partials to components
+gem 'view_component', '~> 4.4' # Turn partials to components passwords.
 
 group :development, :test do
   gem 'binding_of_caller', '~> 2.0' # Allows to grab bindings from higher up the call stack
