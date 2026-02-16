@@ -1,0 +1,9 @@
+inherit_gem:
+  rubocop-espago: rubocop.yml
+
+Style/FrozenStringLiteralComment:
+  Enabled: true
+  EnforcedStyle: always_true
+
+Style/Documentation:
+  Enabled: false
