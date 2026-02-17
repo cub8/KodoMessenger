@@ -24,15 +24,18 @@ gem 'tzinfo-data', '~> 1.2025', platforms: %i[windows jruby] # Windows does not 
 gem 'view_component', '~> 4.4' # Turn partials to components
 
 group :development, :test do
-  gem 'brakeman', '~> 8.0', require: false # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
+  gem 'binding_of_caller', '~> 2.0' # Allows to grab bindings from higher up the call stack
+  gem 'brakeman', '~> 8.0.2', require: false # Static analysis for security vulnerabilities [https://brakemanscanner.org/]
   gem 'bundler-audit', '~> 0.9', require: false # Audits gems for known security defects (use config/bundler-audit.yml to ignore issues)
   gem 'debug', '~> 1.11', platforms: %i[mri windows], require: 'debug/prelude' # Debugging
+  gem 'factory_bot', '~> 6.5.6' # Defining and using factories
   gem 'rubocop', '~> 1.84' # Ruby Linter
   gem 'rubocop-espago', '~> 1.2', require: false # Well defined Rubocop styles
   gem 'ruby-lsp', '~> 0.26' # Ruby LSP
 end
 
 group :development do
+  gem 'better_errors', '~> 2.10' # Better error page
   gem 'web-console', '~> 4.2' # Use console on exceptions pages [https://github.com/rails/web-console]
 end
 
