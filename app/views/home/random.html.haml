@@ -5,10 +5,3 @@
     %ul{style: "color: red"}
       - f.object.errors.full_messages.each do |message|
         %li= message
-
-  %div
-    = f.password_field :password, required: true, autofocus: true, autocomplete: "new-password", placeholder: "Enter new password"
-  %div
-    = f.password_field :password_confirmation, required: true, autocomplete: "new-password", placeholder: "Confirm new password"
-  %div
-    = f.submit "Update password"
