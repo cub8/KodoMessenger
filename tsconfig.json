@@ -11,7 +11,7 @@
     "strict": true,
     "moduleResolution": "Bundler",
     "paths": {
-      "@controllers/*": [
+      "@controllers/": [
         "app/javascript/controllers/*"
       ],
     }

@@ -21,4 +21,6 @@ Things you may want to cover:
 
 * Deployment instructions
 
-* ...
+## Odpalenie w trybie develop
+
+Należy mieć zainstalować aplikację `overmind`. Serwer uruchamiamy poprzez `overmind start`.
