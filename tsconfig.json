@@ -11,8 +11,8 @@
     "strict": true,
     "moduleResolution": "Bundler",
     "paths": {
-      "@controllers/*": [
-        "app/javascript/controllers/*",
+      "@controllers/": [
+        "app/javascript/controllers/*"
       ],
       "@controllers": [
         "app/javascript/controllers/index"
