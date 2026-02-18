@@ -1,0 +1,7 @@
+%h1 AAAAAAAAAAAAAAAAAAAAAa
+
+= form_with url: password_path(params[:token]), method: :patch do |f|
+  - if f.object&.errors&.any?
+    %ul{style: "color: red"}
+      - f.object.errors.full_messages.each do |message|
+        %li= message
