@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.1].define(version: 2026_02_18_182758) do
+ActiveRecord::Schema[8.1].define(version: 2026_02_18_213904) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -30,6 +30,15 @@ ActiveRecord::Schema[8.1].define(version: 2026_02_18_182758) do
     t.bigint "owner_id", null: false
     t.datetime "updated_at", null: false
     t.index ["owner_id"], name: "index_groups_on_owner_id"
+  end
+
+  create_table "memberships", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.bigint "group_id", null: false
+    t.datetime "updated_at", null: false
+    t.bigint "user_id", null: false
+    t.index ["group_id"], name: "index_memberships_on_group_id"
+    t.index ["user_id"], name: "index_memberships_on_user_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -64,6 +73,8 @@ ActiveRecord::Schema[8.1].define(version: 2026_02_18_182758) do
 
   add_foreign_key "channels", "groups"
   add_foreign_key "groups", "users", column: "owner_id"
+  add_foreign_key "memberships", "groups"
+  add_foreign_key "memberships", "users"
   add_foreign_key "messages", "channels"
   add_foreign_key "messages", "users"
   add_foreign_key "sessions", "users"
