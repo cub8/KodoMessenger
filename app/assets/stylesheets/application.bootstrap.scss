@@ -1,2 +1,23 @@
-@use 'bootstrap/scss/bootstrap';
-@use 'bootstrap-icons/font/bootstrap-icons';
+$primary: #fd0dc1;
+$secondary: #ffbee6;
+
+$page-bg: #021103;
+$contrast-bg: #440a3a;
+
+$input-bg: #d1fcd4;
+$button-border: #f730c5;
+$button-hover: #4e23ec;
+
+$text-light: #ffffff;
+
+@import 'bootstrap/scss/bootstrap';
+@import 'bootstrap-icons/font/bootstrap-icons';
+@import 'sessions';
+@import 'home';
+
+body {
+  background-color: $page-bg;
+  background-image: url(capybara-head.svg);
+  background-repeat: repeat;
+  background-size: 100px 100px;
+}
