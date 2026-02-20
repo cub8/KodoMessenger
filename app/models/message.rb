@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 class Message < ApplicationRecord
+  include GuidGenerator
+
   belongs_to :user
-  belongs_to :chanel
+  belongs_to :channel
 end

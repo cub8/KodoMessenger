@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
 class Channel < ApplicationRecord
+  include GuidGenerator
+
   belongs_to :group
 end
