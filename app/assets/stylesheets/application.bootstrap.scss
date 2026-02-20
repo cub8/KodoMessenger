@@ -1,2 +1,5 @@
-@use 'bootstrap/scss/bootstrap';
-@use 'bootstrap-icons/font/bootstrap-icons';
+@import "bootstrap/scss/functions";
+@import "bootstrap_custom";
+@import "bootstrap/scss/bootstrap";
+@import "bootstrap-icons/font/bootstrap-icons";
+@import "effects"

@@ -1,1 +1,4 @@
 %h1= @channel.name
+
+= turbo_frame_tag "messages-#{@channel.guid}", src: channel_messages_path(channel_guid: @channel.guid), loading: 'lazy' do
+  .text-secondary Pobieranie wiadomości

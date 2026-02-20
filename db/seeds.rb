@@ -16,6 +16,20 @@ user = User.create!(
   nickname:              'ertania',
 )
 
+user2 = User.create!(
+  email_address:         'koksuklepaminecraft@gmail.com',
+  password:              '123',
+  password_confirmation: '123',
+  nickname:              'cub8',
+)
+
+user3 = User.create!(
+  email_address:         'rafal.kon@example.com',
+  password:              '123',
+  password_confirmation: '123',
+  nickname:              'Koń Rafał',
+)
+
 group = Group.create!(
   name:        'Grupa testowa',
   description: 'Grupa służąca do testów itd.',
@@ -24,8 +38,20 @@ group = Group.create!(
 
 group.users << user
 
-Channel.create!(
+channel = Channel.create!(
   name:        'Kanał testowy',
   description: 'Kanał służący do testowania!',
   group:       group,
+)
+
+Message.create!(
+  content: 'Siemanko!',
+  channel: channel,
+  user:    user3,
+)
+
+Message.create!(
+  content: 'No eluwa',
+  channel: channel,
+  user:    user2,
 )

@@ -1,0 +1,10 @@
+= helpers.turbo_frame_tag turbo_id do
+  .card.mb-3.card-glow
+    .card-body
+      %span
+        .d-flex
+          .fw-bold.me-2
+            = message.user.nickname
+          .d-flex.fs-7.text-secondary.align-items-center
+            = message.created_at
+      = message.content

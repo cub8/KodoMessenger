@@ -1,0 +1,8 @@
+@import "bootstrap/scss/variables";
+
+$h7-font-size: $font-size-base * 0.75;
+$h8-font-size: $font-size-base * 0.50;
+
+$font-sizes: map-merge($font-sizes,
+    (7: $h7-font-size,
+      8: $h8-font-size ));

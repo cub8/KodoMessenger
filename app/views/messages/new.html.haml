@@ -1,0 +1,5 @@
+%h1 Nowa wiadomość
+
+= form_with model: @message, url: channel_messages_path(@channel.guid) do |f|
+  = f.text_area :content
+  = f.submit
