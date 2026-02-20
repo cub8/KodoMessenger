@@ -1,37 +1,19 @@
-h1 {
-    font-size: 3rem;
-    color: $text-light;
-    margin-bottom: 1.5rem;
-    text-align: center;
+.home_page {
+  display: grid;
+  height: 100vh;
+
+  grid-template-columns: 50px 200px 1fr 200px;
+  grid-template-rows: 100px 1fr 100px;
+
+  grid-template-areas:
+    "left-nav channels-nav header chat_users"
+    "left-nav channels-nav content chat_users"
+    "left-nav channels-nav chat-box chat_users";
 }
 
-
-section.container {
-    max-width: 400px;
-    margin: 2rem auto;
-    padding: 2rem;
-    background-color: $contrast-bg;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(107, 18, 18, 0.1);
-    background-color: $contrast-bg;
-}
-
-
-section.container p {
-    font-size: 1.2rem;
-    margin-bottom: 2rem;
-    color: $secondary;
-}
-
-
-section.container .btn-danger {
-    padding: 0.5rem 1.5rem;
-    font-size: 1rem;
-    font-weight: bold;
-    border-radius: 5px;
-    transition: background-color 0.2s ease-in-out;
-
-    &:hover {
-    background-color: darken(#dc3545, 10%);
-    }
-}
+.left-nav {grid-area: left-nav; background: #27afee;}
+.channels-nav    { grid-area: channels-nav; background: #6271fa; }
+.header  { grid-area: header; background: #50f581; }
+.content { grid-area: content; background: #fc6161; }
+.chat_users   { grid-area: chat_users; background: #ccff6d; }
+.chat-box  { grid-area: chat-box; background: #fd1deb; }

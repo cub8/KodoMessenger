@@ -1,7 +1,22 @@
-%section.container
-    %h1 Home#index
+.home_page
+    .left-nav
 
-    %p Zalogowano jej 🎇
+    .channels-nav
+        %h4 Sidebar
+        %p channels
 
-    = button_to "Logout", session_path, method: :delete, class: "btn btn-danger"
+    .header
+        %h3 Chanel name
+        %p desc
+    .chat_users
+        %h4 Status
 
+    .content
+        %h1 Home#index
+
+        %p Zalogowano jej 🎇
+
+        = button_to "Logout", session_path, method: :delete, class: "btn btn-danger"
+
+    .chat-box
+        %p Chat box
