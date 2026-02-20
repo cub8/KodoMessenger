@@ -9,9 +9,23 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
-User.destroy_all
-User.create!(
+user = User.create!(
   email_address:         'eljo@example.com',
   password:              '123',
   password_confirmation: '123',
+  nickname:              'ertania',
+)
+
+group = Group.create!(
+  name:        'Grupa testowa',
+  description: 'Grupa służąca do testów itd.',
+  owner:       user,
+)
+
+group.users << user
+
+Channel.create!(
+  name:        'Kanał testowy',
+  description: 'Kanał służący do testowania!',
+  group:       group,
 )

@@ -22,19 +22,4 @@ class ActionDispatch::IntegrationTest
     user = FactoryBot.create(:user)
     login_as user
   end
-
-  # def login_as(user)
-  #   if respond_to? :visit
-  #     visit session_path
-  #     fill_in :email_address, with: user.email_address
-  #     fill_in :password, with: 'secret'
-  #     click_on 'Login'
-  #   else
-  #     post session_url, params: { name: user.email_address, password: 'secret' }
-  #   end
-  # end
-
-  # def logout
-  #   delete logout_url
-  # end
 end

@@ -16,6 +16,7 @@
 
         %p Zalogowano jej 🎇
 
+        = link_to 'Testy', channel_path(@test_channel.guid)
         = button_to "Logout", session_path, method: :delete, class: "btn btn-danger"
 
     .chat-box

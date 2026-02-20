@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'home/index'
   resource :session
   resources :passwords, param: :token
+  resources :channels, param: :guid, except: %i[index]
 
   root 'home#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
