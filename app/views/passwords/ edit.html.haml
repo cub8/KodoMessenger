@@ -1,63 +1,15 @@
-.sign-in-form input:-webkit-autofill,
-.sign-in-form input:-webkit-autofill:hover,
-.sign-in-form input:-webkit-autofill:focus,
-.sign-in-form input:-webkit-autofill:active {
-  -webkit-box-shadow: 0 0 0px 1000px $input-bg inset !important;
-  -webkit-text-fill-color: #000 !important;
-  transition: background-color 5000s ease-in-out 0s;
-}
+.sign-in-form
+  %h1 Reset your password
 
-.sign-in-form input {
-  background-color: $input-bg;
-;
-}
+  = form_with url: password_path(params[:token]), method: :patch do |f|
+    - if f.object&.errors&.any?
+      %ul{style: "color: red"}
+        - f.object.errors.full_messages.each do |message|
+          %li= message
 
-.sign-in-form {
-  max-width: 400px;
-  margin: 2rem auto;
-  padding: 2rem;
-  background-color: $contrast-bg;
-  border-radius: 8px;
-  box-shadow: 0 0 10px rgba(107, 18, 18, 0.1);
-
-  h1 {
-    text-align: center;
-    margin-bottom: 1.5rem;
-    color: $text-light;
-  }
-
-  div {
-    margin-bottom: 1rem;
-
-    input {
-      width: 100%;
-      padding: 0.5rem;
-      border-radius: 4px;
-      border: 1px solid $button-border;
-    }
-  }
-
-  input[type="submit"] {
-    background-color: $primary;
-    color: $text-light;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background-color 0.2s;
-
-    &:hover {
-      background-color: $button-hover;
-    }
-  }
-
-  a {
-    display: block;
-    text-align: center;
-    margin-top: 1rem;
-    color: $secondary;
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-}
+    %div
+      = f.password_field :password, required: true, autofocus: true, autocomplete: "new-password", placeholder: "Enter new password"
+    %div
+      = f.password_field :password_confirmation, required: true, autocomplete: "new-password", placeholder: "Confirm new password"
+    %div
+      = f.submit "Update password"

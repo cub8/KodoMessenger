@@ -1,9 +1,9 @@
 %p{style: "color: red"}= alert
+.sign-in-form
+  %h1 Forgot your password?
 
-%h1 Forgot your password?
-
-= form_with url: passwords_path do |f|
-  %div
-    = f.email_field :email_address, required: true, autofocus: true, placeholder: "Enter your email address"
-  %div
-    = f.submit "Email reset instructions"
+  = form_with url: passwords_path do |f|
+    %div
+      = f.email_field :email_address, required: true, autofocus: true, placeholder: "Enter your email address"
+    %div
+      = f.submit "Email reset instructions"
