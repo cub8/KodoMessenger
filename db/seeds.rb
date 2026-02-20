@@ -22,9 +22,10 @@ group = Group.create!(
   owner:       user,
 )
 
-group.members << user
+group.users << user
 
 Channel.create!(
-  description: 'Kanał testowy!',
+  name:        'Kanał testowy',
+  description: 'Kanał służący do testowania!',
   group:       group,
 )

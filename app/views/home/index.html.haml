@@ -1,6 +1,7 @@
 %h1 Home#index
 %p Zalogowano jej 🎇
 
+= link_to 'Testy', channel_path(@test_channel.guid)
 
 .class.flex.mt-1
     = button_to "Logout", session_path, method: :delete
