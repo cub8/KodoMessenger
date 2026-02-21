@@ -1,7 +1,33 @@
-%h1 Home#index
-%p Zalogowano jej 🎇
+.home_page
+    .left-nav
 
-= link_to 'Testy', channel_path(@test_channel.guid)
+    .channels-nav
+        %h4 Sidebar
+        %p channels
 
-.class.flex.mt-1
-    = button_to "Logout", session_path, method: :delete
+    .header.shadow
+        .bg-primary.rounded-bottom.mb-5.pb-1.px-3.pt-2
+            .text-info.h4
+                = @test_channel.name
+            .text-info.h5
+                = @test_channel.description
+    .chat_users
+        %h5.text-info.px-3.pt-1.h-100.d-flex.flex-column.bg-primary.bg-opacity-50 Status
+
+    .content
+        .m-3
+            %h2.text-light Home#index
+
+            %p.text-light Zalogowano jej 🎇
+
+            .text-danger
+                = link_to 'Testy', channel_path(@test_channel.guid), class: 'text-danger'
+            = button_to "Logout", session_path, method: :delete, class: "btn btn-danger"
+
+    .chat-box.bg-primary
+        %form.p-3.row.g-2.flex-row{ action: "#", method: "post" }
+            .col.flex-grow
+                %textarea#chat-input.form-control.bg-primary.border-info.text-light{ type: "text", placeholder: "Message", name: "message" }
+            .col-auto{ style: "width: 50px;" }
+                %button.btn.btn-secondary.w-100.mt-2.p-2.rounded-circle{ type: "submit" } >
+

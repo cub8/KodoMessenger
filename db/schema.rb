@@ -70,7 +70,7 @@ ActiveRecord::Schema[8.1].define(version: 2026_02_18_213904) do
     t.string "nickname", null: false
     t.string "password_digest", null: false
     t.datetime "updated_at", null: false
-    t.index ["email_address"], name: "index_users_on_email_address", unique: true
+    t.index ["email_address"], name: "index_users_on_email_address"
   end
 
   add_foreign_key "channels", "groups"

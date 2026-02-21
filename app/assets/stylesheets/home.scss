@@ -1,0 +1,19 @@
+.home_page {
+  display: grid;
+  height: 100vh;
+
+  grid-template-columns: 50px 200px 1fr 200px;
+  grid-template-rows: 80px 1fr 100px;
+
+  grid-template-areas:
+    "left-nav channels-nav header header"
+    "left-nav channels-nav content chat_users"
+    "left-nav channels-nav chat-box chat_users";
+}
+
+.left-nav {grid-area: left-nav; background: #27afee;}
+.channels-nav    { grid-area: channels-nav; background: #6271fa; }
+.header  { grid-area: header; }
+.content  { grid-area: content;}
+.chat_users   { grid-area: chat_users;}
+.chat-box  { grid-area: chat-box; background: #fd1deb; }
