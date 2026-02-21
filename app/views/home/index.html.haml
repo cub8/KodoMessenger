@@ -5,19 +5,29 @@
         %h4 Sidebar
         %p channels
 
-    .header
-        %h3 Chanel name
-        %p desc
+    .header.shadow
+        .bg-primary.rounded-bottom.mb-5.pb-1.px-3.pt-2
+            .text-info.h4
+                = @test_channel.name
+            .text-info.h5
+                = @test_channel.description
     .chat_users
-        %h4 Status
+        %h5.text-info.px-3.pt-1.h-100.d-flex.flex-column.bg-primary.bg-opacity-50 Status
 
     .content
-        %h1 Home#index
+        .m-3
+            %h2.text-light Home#index
 
-        %p Zalogowano jej 🎇
+            %p.text-light Zalogowano jej 🎇
 
-        = link_to 'Testy', channel_path(@test_channel.guid)
-        = button_to "Logout", session_path, method: :delete, class: "btn btn-danger"
+            .text-danger
+                = link_to 'Testy', channel_path(@test_channel.guid), class: 'text-danger'
+            = button_to "Logout", session_path, method: :delete, class: "btn btn-danger"
 
-    .chat-box
-        %p Chat box
+    .chat-box.bg-primary
+        %form.p-3.row.g-2.flex-row{ action: "#", method: "post" }
+            .col.flex-grow
+                %textarea#chat-input.form-control.bg-primary.border-info.text-light{ type: "text", placeholder: "Message", name: "message" }
+            .col-auto{ style: "width: 50px;" }
+                %button.btn.btn-secondary.w-100.mt-2.p-2.rounded-circle{ type: "submit" } >
+

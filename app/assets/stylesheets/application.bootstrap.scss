@@ -7,7 +7,6 @@ $page-bg: #010f02;
 
 $input-bg: #d1fcd4;
 $input-active: #86f48e;
-
 $button-border: #f730c5;
 
 
@@ -16,9 +15,21 @@ $button-border: #f730c5;
 @import 'basic_form';
 @import 'home';
 
+//Diagonal bg animation
+// @keyframes moveCapybara {
+//   from {
+//     background-position: 0 0;
+//   }
+//   to {
+//     background-position: 100px 100px;
+//   }
+// }
+
 body {
   background-color: $page-bg;
   background-image: url(capybara-head.svg);
   background-repeat: repeat;
   background-size: 100px 100px;
+
+  //animation: moveCapybara 8s linear infinite;
 }
