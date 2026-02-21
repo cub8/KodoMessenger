@@ -1,15 +1,17 @@
 %p{style: "color: green"}= notice
 %p{style: "color: red"}= alert
 
-.sign-in-form
-  %h1 Sign in
+.basic-form.mx-auto.w-25.bg-primary.p-4.rounded.shadow.mt-5.pt-4
+  %h1.text-center.mb-4.text-light Sign in
 
   = form_with url: session_path do |f|
-    %div
-      = f.email_field :email_address, required: true, autofocus: true, autocomplete: "username", placeholder: "Enter your email address", value: params[:email_address]
-    %div
-      = f.password_field :password, required: true, autocomplete: "current-password", placeholder: "Enter your password"
-    %div
-      = f.submit "Sign in"
+    .mb-3
+      = f.email_field :email_address, class: "form-control", required: true, autofocus: true, placeholder: "Enter your email address"
 
-      = link_to "Forgot password?", new_password_path
+    .mb-3
+      = f.password_field :password, class: "form-control", required: true, placeholder: "Enter your password"
+
+    .d-grid.gap-2.pt-2
+      = f.submit "Sign in", class: "btn btn-secondary text-light"
+      .text-center.mt-2.text-info
+        = link_to "Forgot password?", new_password_path, class: "text-info"

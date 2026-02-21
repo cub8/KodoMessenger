@@ -1,9 +1,11 @@
 %p{style: "color: red"}= alert
-.sign-in-form
-  %h1 Forgot your password?
+
+.basic-form.mx-auto.w-25.bg-primary.p-4.rounded.shadow.mt-5.pt-4
+  %h1.text-center.mb-4.text-light Forgot your password?
 
   = form_with url: passwords_path do |f|
-    %div
-      = f.email_field :email_address, required: true, autofocus: true, placeholder: "Enter your email address"
-    %div
-      = f.submit "Email reset instructions"
+    .mb-3
+      = f.email_field :email_address, class: "form-control", required: true, autofocus: true, placeholder: "Enter your email address"
+
+    .d-grid.gap-2.pt-2
+      = f.submit "Reset", class: "btn btn-secondary text-light"

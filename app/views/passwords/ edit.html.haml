@@ -1,5 +1,5 @@
-.sign-in-form
-  %h1 Reset your password
+.basic-form.mx-auto.w-25
+  %h1.text-center Reset your password
 
   = form_with url: password_path(params[:token]), method: :patch do |f|
     - if f.object&.errors&.any?

@@ -1,14 +1,15 @@
-$primary: #fd0dc1;
-$secondary: #ffbee6;
+$primary: #440a3a;
+$secondary: #f730c5;
+$info: #ffbee6;
+$text-light: #ffffff;
 
-$page-bg: #021103;
-$contrast-bg: #440a3a;
+$page-bg: #010f02;
 
 $input-bg: #d1fcd4;
-$button-border: #f730c5;
-$button-hover: #4e23ec;
+$input-active: #86f48e;
 
-$text-light: #ffffff;
+$button-border: #f730c5;
+
 
 @import 'bootstrap/scss/bootstrap';
 @import 'bootstrap-icons/font/bootstrap-icons';
