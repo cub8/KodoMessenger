@@ -3,10 +3,10 @@
   height: 100vh;
 
   grid-template-columns: 50px 200px 1fr 200px;
-  grid-template-rows: 100px 1fr 100px;
+  grid-template-rows: 90px 1fr 100px;
 
   grid-template-areas:
-    "header header header chat_users"
+    "left-nav channels-nav header header"
     "left-nav channels-nav content chat_users"
     "left-nav channels-nav chat-box chat_users";
 }
