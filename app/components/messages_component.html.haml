@@ -1,5 +1,3 @@
 = helpers.turbo_frame_tag turbo_id do
-  .container.d-flex.flex-column.align-items-center
-    - messages.each do |message|
-      .w-25
-        = render MessageComponent.new(message)
+  - messages.each do |message|
+    = render MessageComponent.new(message)

@@ -1,4 +1,12 @@
-%h1= @channel.name
+.d-flex.flex-column.vh-100
+  .container-fluid.bg-white.border-bottom.p-0.m-0.text-center
+    %h1= @channel.name
 
-= turbo_frame_tag "messages-#{@channel.guid}", src: channel_messages_path(channel_guid: @channel.guid), loading: 'lazy' do
-  .text-secondary Pobieranie wiadomości
+  .container.d-flex.flex-column.align-items-center.flex-grow-1.overflow-auto
+    = turbo_frame_tag "messages-#{@channel.guid}", src: channel_messages_path(channel_guid: @channel.guid), loading: 'lazy', class: 'w-100' do
+      .text-secondary Pobieranie wiadomości
+
+  .container-fluid.bg-white
+    .w-75.mx-auto
+      = turbo_frame_tag 'new-message', src: new_channel_message_path(channel_guid: @channel.guid) do
+        .text-secondary Ładowanie okienka

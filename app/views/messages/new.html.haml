@@ -1,5 +1,6 @@
 %h1 Nowa wiadomość
 
-= form_with model: @message, url: channel_messages_path(@channel.guid) do |f|
-  = f.text_area :content
-  = f.submit
+= turbo_frame_tag 'new-message' do
+  = form_with model: @message, url: channel_messages_path(@channel.guid) do |f|
+    = f.text_area :content, { placeholder: 'Write your epic message...', class: 'w-100 resize-none', rows: 4 }
+    = f.submit

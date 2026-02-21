@@ -10,7 +10,7 @@ class MessagesController < ApplicationController
   ]
 
   def index
-    @messages = @channel.messages.joins(:user)
+    @messages = @channel.messages.joins(:user).order(:created_at)
   end
 
   def show; end
@@ -21,7 +21,20 @@ class MessagesController < ApplicationController
 
   def edit; end
 
-  def create; end
+  def create
+    builder = MessageBuilder.new(
+      user:    Current.session.user,
+      channel: @channel,
+      content: message_params[:content],
+    )
+    @message = builder.build
+
+    if builder.save
+      redirect_to new_channel_message_path, status: :created
+    else
+      render :new, status: :unprocessable_entity
+    end
+  end
 
   def update; end
 
@@ -35,5 +48,9 @@ class MessagesController < ApplicationController
 
   def set_message
     @message = Message.find_by!(guid: params[:guid])
+  end
+
+  def message_params
+    params.require(:message).permit(:content)
   end
 end
