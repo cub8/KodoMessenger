@@ -6,7 +6,7 @@
   grid-template-rows: 100px 1fr 100px;
 
   grid-template-areas:
-    "left-nav channels-nav header chat_users"
+    "header header header chat_users"
     "left-nav channels-nav content chat_users"
     "left-nav channels-nav chat-box chat_users";
 }
