@@ -10,7 +10,7 @@ class MessagesController < ApplicationController
   ]
 
   def index
-    @messages = @channel.messages.joins(:user).order(:created_at)
+    @messages = @channel.messages.preload(:user).order(:created_at)
   end
 
   def show; end

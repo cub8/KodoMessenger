@@ -13,11 +13,10 @@ class Message < ApplicationRecord
   private
 
   def broadcast_message
-    messages_container_turbo_id = "messages-#{channel.guid}"
-
     broadcast_append_to(
-      messages_container_turbo_id,
-      html: ApplicationController.render(MessageComponent.new(self)),
+      ChannelMessagesStream.turbo_id(channel),
+      html:   ApplicationController.render(MessageComponent.new(self)),
+      target: ChannelMessagesFrame.turbo_id(channel),
     )
   end
 end

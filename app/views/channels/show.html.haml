@@ -2,8 +2,13 @@
   .container-fluid.bg-white.border-bottom.p-0.m-0.text-center
     %h1= @channel.name
 
-  .container.d-flex.flex-column.align-items-center.flex-grow-1.overflow-auto
-    = turbo_frame_tag "messages-#{@channel.guid}", src: channel_messages_path(channel_guid: @channel.guid), loading: 'lazy', class: 'w-100' do
+  .container.d-flex.flex-column.align-items-center.flex-grow-1.overflow-scroll{
+    data: {
+      controller: ChatScrollStimulusController.name,
+      ChatScrollStimulusController.target => ChatScrollStimulusController.chat_container_target,
+    }
+  }
+    = turbo_frame_tag ChannelMessagesFrame.turbo_id(@channel), src: channel_messages_path(channel_guid: @channel.guid), loading: 'lazy', class: 'w-100' do
       .text-secondary Pobieranie wiadomości
 
   .container-fluid.bg-white

@@ -8,6 +8,6 @@ class MessageComponent < ViewComponent::Base
   end
 
   def turbo_id
-    "message-#{message.guid}"
+    ChannelMessagesFrame.turbo_id(message)
   end
 end
