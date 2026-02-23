@@ -9,6 +9,6 @@ class Group < ApplicationRecord
 
   alias_method :members, :users
 
-  validates :name, uniqueness: true, length:  { minimum: 1, maximum: 30 }
+  validates :name, length:  { minimum: 1, maximum: 30 }
   validates :description, length:  { maximum: 500 }
 end
