@@ -15,6 +15,18 @@ user = User.create!(
   password_confirmation: '123',
   nickname:              'ertania',
 )
+User.create!(
+  email_address:         'cube8@example.com',
+  password:              '1234',
+  password_confirmation: '1234',
+  nickname:              'cub8',
+)
+User.create!(
+  email_address:         'random_user@example.com',
+  password:              '1234',
+  password_confirmation: '1234',
+  nickname:              'random',
+)
 
 group = Group.create!(
   name:        'Grupa testowa',

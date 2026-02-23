@@ -1,19 +1,25 @@
-$primary: #440a3a;
-$secondary: #f730c5;
-$info: #ffbee6;
-$text-light: #ffffff;
-
 $page-bg: #010f02;
-
 $input-bg: #d1fcd4;
 $input-active: #86f48e;
-$button-border: #f730c5;
 
+@use "bootstrap/scss/bootstrap" with (
 
-@import 'bootstrap/scss/bootstrap';
+  $theme-colors: (
+    "danger": #dc3545,
+    "light": #ffffff,
+    "primary": #440a3a,
+    "secondary": #f730c5,
+    "contrast": #76b564,
+    "trinary": #7a42f4,
+    "info": #ffbee6,
+    "success": #28a745
+  )
+);
+
 @import 'bootstrap-icons/font/bootstrap-icons';
 @import 'basic_form';
 @import 'home';
+
 
 //Diagonal bg animation
 // @keyframes moveCapybara {

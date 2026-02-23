@@ -1,0 +1,33 @@
+
+- if Current.user
+  .avatar.d-flex.align-items-center.justify-content-center.bg-secondary.text-white.rounded-4.m-2{ style: "width: 48px; height: 48px;" }
+    = Current.user.nickname[0].upcase
+
+.border-bottom.border-secondary.w-max
+
+.row.g-0
+  .col-3.text-light.vh-100.d-flex.flex-column
+    .flex-grow-1.overflow-y-auto.custom-scrollbar
+      #groups
+        - @groups.each do |group|
+          = link_to group_path(@test_group.guid), data: { turbo_frame: "main_content" }, class: "text-decoration-none" do
+
+            .row.m-2.bg-primary.text-info
+              .nav-icon.d-flex.align-items-center.mt-2.mb-2.mx-1.transition-all{ style: "width: 40px; height: 40px;", title: group.name }
+                = group.name[0].upcase
+
+  .col-9.vh-100.d-flex.flex-column
+    .flex-grow-1.overflow-y-auto.custom-scrollbar
+      #users
+        - @users.each_with_index do |user, index|
+          - bg_class = index.odd? ? "bg-contrast" : "bg-trinary"
+          = link_to channel_path(@test_channel.guid), data: { turbo_frame: "main_content" }, class: "text-decoration-none" do
+
+            .row.m-2.align-items-center.bg-primary.text-info
+              .nav-icon.rounded-circle.d-flex.justify-content-center.align-items-center.m-2.justify-center.text-light.transition-all{class: bg_class,  style: "width: 40px; height: 40px;", title: user.email_address }
+                = user.nickname[0].upcase
+              = user.nickname
+
+
+        -# .btn.btn-outline-success.rounded-circle.d-flex.align-items-center.justify-content-center.m-2.justify-center{ style: "width: 48px; height: 48px;" }
+        -#   %span.fs-4 +

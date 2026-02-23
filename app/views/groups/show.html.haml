@@ -1,0 +1,6 @@
+%h1.text-light
+    = @group.name
+
+%h2.text-light
+    - @channels.each do |channel|
+        = channel.name

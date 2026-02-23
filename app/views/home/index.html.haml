@@ -1,8 +1,7 @@
-.home_page
-    .left-nav
-
-    .channels-nav
-        %h4 Sidebar
+.home_page.vh-100.overflow-hidden
+    .channels-nav.bg-primary.bg-opacity-75
+        .flex-1
+            = render "layouts/sidebar"
         %p channels
 
     .header.shadow
@@ -18,7 +17,9 @@
         .m-3
             %h2.text-light Home#index
 
-            %p.text-light Zalogowano jej 🎇
+            %p.text-light
+                Welcome!
+                = Current.user.nickname.capitalize
 
             .text-danger
                 = link_to 'Testy', channel_path(@test_channel.guid), class: 'text-danger'
