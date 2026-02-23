@@ -6,13 +6,13 @@ class ChatScrollController extends Controller<HTMLDivElement> {
   static targets = ["chatContainer"]
 
   declare readonly chatContainerTarget: HTMLDivElement
-  declare shouldScroll: boolean
 
   connect() {
-    this.shouldScroll = true
+    this.element.addEventListener("turbo:before-frame-render", (event) => {
+      const originalRender = event.detail.render
 
-    this.element.addEventListener("turbo:frame-render", () => {
-      if (this.shouldScroll) {
+      event.detail.render = (currentFrame, newFrame) => {
+        originalRender(currentFrame, newFrame)
         this.scrollToBottom()
       }
     })
@@ -39,15 +39,11 @@ class ChatScrollController extends Controller<HTMLDivElement> {
     if (!messagesContainer) return
 
     const wasAtBottom = this.isAtTheBottom()
-
     const originalRender = event.detail.render
 
     event.detail.render = async(currentFrame) => {
       originalRender(currentFrame)
-
-      if (wasAtBottom) {
-        this.scrollToBottom()
-      }
+      if (wasAtBottom) this.scrollToBottom()
     }
   }
   private boundStreamHandler = this.streamRenderHandler.bind(this)

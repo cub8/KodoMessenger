@@ -30,7 +30,7 @@ class MessagesController < ApplicationController
     @message = builder.build
 
     if builder.save
-      redirect_to new_channel_message_path, status: :created
+      redirect_to new_channel_message_path(guid: @channel.guid)
     else
       render :new, status: :unprocessable_entity
     end
