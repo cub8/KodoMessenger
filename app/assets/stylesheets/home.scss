@@ -11,8 +11,24 @@
     "channels-nav chat-box chat_users";
 }
 
-.channels-nav    { grid-area: channels-nav; background: #6271fa; }
-.header  { grid-area: header; }
-.content  { grid-area: content;}
-.chat_users   { grid-area: chat_users;}
-.chat-box  { grid-area: chat-box; background: #fd1deb; }
+.channels-nav {
+  grid-area: channels-nav;
+  background: #6271fa;
+}
+
+.header {
+  grid-area: header;
+}
+
+.content {
+  grid-area: content;
+}
+
+.chat_users {
+  grid-area: chat_users;
+}
+
+.chat-box {
+  grid-area: chat-box;
+  background: #fd1deb;
+}
