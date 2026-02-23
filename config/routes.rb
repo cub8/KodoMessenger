@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :channels, param: :guid, except: %i[index] do
     resources :messages, param: :guid
   end
+  resources :users
+  resources :groups, param: :guid, only: [:show]
 
   root 'home#index'
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html

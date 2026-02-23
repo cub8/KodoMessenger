@@ -1,0 +1,13 @@
+.basic-form input:-webkit-autofill:hover
+{
+  -webkit-box-shadow: 0 0 0px 1000px $input-bg inset !important;
+  -webkit-text-fill-color: #000000 !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+.basic-form input:-webkit-autofill:focus,
+.basic-form input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0px 1000px $input-active inset !important;
+  -webkit-text-fill-color: #000000 !important;
+  transition: background-color 5000s ease-in-out 0s;
+}
