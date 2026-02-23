@@ -38,7 +38,7 @@ end
 
 group :development do
   gem 'better_errors', '~> 2.10' # Better error page
-  gem 'web-console', '~> 4.2' # Use console on exceptions pages [https://github.com/rails/web-console]
+  gem 'web-console', '~> 4.3' # Use console on exceptions pages [https://github.com/rails/web-console]
 end
 
 # rubocop:enable Layout/LineLength
