@@ -5,4 +5,7 @@ class Channel < ApplicationRecord
 
   belongs_to :group
   has_many :messages
+
+  validates :name, length:  { minimum: 1, maximum: 30 }
+  validates :description, length:  { maximum: 300 }
 end

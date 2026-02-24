@@ -9,4 +9,6 @@ class User < ApplicationRecord
   has_many :groups, through: :memberships
 
   normalizes :email_address, with: ->(e) { e.strip.downcase }
+
+  validates :nickname, uniqueness: true, length: { minimum: 1, maximum: 20 }
 end

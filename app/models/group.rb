@@ -9,4 +9,7 @@ class Group < ApplicationRecord
   has_many :channels, dependent: :destroy
 
   alias_method :members, :users
+
+  validates :name, length:  { minimum: 1, maximum: 30 }
+  validates :description, length:  { maximum: 500 }
 end
