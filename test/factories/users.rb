@@ -2,7 +2,9 @@
 
 FactoryBot.define do
   factory :user do
-    password_digest { BCrypt::Password.create('secret') }
+    nickname { 'Tester' }
     email_address { 'ab@mail.com' }
+    password { 'secret' }
+    password_confirmation { 'secret' }
   end
 end
