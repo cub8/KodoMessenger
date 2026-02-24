@@ -18,8 +18,5 @@ end
 
 class ActionDispatch::IntegrationTest
 
-  def setup
-    user = FactoryBot.create(:user)
-    login_as user
-  end
+  def setup; end
 end
