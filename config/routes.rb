@@ -4,8 +4,10 @@ Rails.application.routes.draw do
   get 'home/index'
   resource :session
   resources :passwords, param: :token
+  resources :channels, param: :guid, except: %i[index] do
+    resources :messages, param: :guid
+  end
   resources :users
-  resources :channels, param: :guid, except: %i[index]
   resources :groups, param: :guid, only: [:show]
 
   root 'home#index'

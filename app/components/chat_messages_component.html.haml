@@ -1,0 +1,4 @@
+= helpers.turbo_frame_tag turbo_frame_id do
+  = helpers.turbo_stream_from turbo_stream_id
+  - messages.each do |message|
+    = render MessageComponent.new(message)

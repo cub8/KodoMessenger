@@ -12,6 +12,6 @@ class ChannelsController < ApplicationController
   private
 
   def set_channel
-    @channel = Channel.find_by(guid: params[:guid])
+    @channel = Channel.find_by!(guid: params[:guid])
   end
 end
