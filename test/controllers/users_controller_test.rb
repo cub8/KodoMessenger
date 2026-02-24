@@ -52,5 +52,4 @@ class UsersControllerTest < ActionDispatch::IntegrationTest
       assert_equal 'Form is invalid', flash[:alert]
     end
   end
-
 end
