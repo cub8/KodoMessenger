@@ -2,7 +2,7 @@
 %p{style: "color: red"}= alert
 
 .basic-form.mx-auto.w-25.bg-primary.p-4.rounded.shadow.mt-5.pt-4
-  %h1.text-center.mb-4.text-light Sign in
+  %h1.text-center.mb-4.text-light Login
 
   = form_with url: session_path do |f|
     .mb-3
@@ -12,6 +12,8 @@
       = f.password_field :password, class: "form-control", required: true, placeholder: "Enter your password"
 
     .d-grid.gap-2.pt-2
-      = f.submit "Sign in", class: "btn btn-secondary text-light"
-      .text-center.mt-2.text-info
+      = f.submit "Login", class: "btn btn-secondary text-light"
+      .text-center.mt-1.text-info
         = link_to "Forgot password?", new_password_path, class: "text-info"
+      .text-center.mt-2.text-info
+        = link_to "No account? Sing Up!", new_user_path, class: "text-info"

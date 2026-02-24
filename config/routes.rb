@@ -7,7 +7,7 @@ Rails.application.routes.draw do
   resources :channels, param: :guid, except: %i[index] do
     resources :messages, param: :guid
   end
-  resources :users
+  resources :users, only: %i[new create]
   resources :groups, param: :guid, only: [:show]
 
   root 'home#index'

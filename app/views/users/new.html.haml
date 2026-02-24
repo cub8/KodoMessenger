@@ -1,0 +1,31 @@
+.basic-form.mx-auto.w-50.bg-primary.p-4.rounded.shadow.mt-5.pt-4
+  %h1.text-center.mb-4.text-light
+    Create an Account
+
+  = form_with model: @user, local: true, html: { novalidate: true } do |f|
+
+    - if @user.errors.any?
+      .alert.alert-danger.text-danger.mb-3
+        %h4.h6.fw-bold Errors:
+        %ul.mb-0
+          - @user.errors.full_messages.each do |msg|
+            %li= msg
+
+
+    .mb-2
+      = f.label :nickname, class: "form-label text-info"
+      = f.text_field :nickname, class: "form-control", required: true
+
+    .mb-2
+      = f.label :email_address, class: "form-label text-info"
+      = f.email_field :email_address, class: "form-control", placeholder: "email@example.com", required: true
+
+    .mb-2
+      = f.label :password, class: "form-label text-info"
+      = f.password_field :password, class: "form-control", required: true
+
+    .d-grid.gap-2.pt-3
+      = f.submit "Sign Up", class: "btn btn-secondary text-light fw-bold"
+
+    .text-center.mt-3
+      = link_to "Already have an account? Login", new_session_path, class: "text-info text-decoration-none small"
