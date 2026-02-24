@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class MessagesComponent < ViewComponent::Base
+class ChatMessagesComponent < ViewComponent::Base
   attr_accessor :messages, :channel
 
   def initialize(messages:, channel:)
